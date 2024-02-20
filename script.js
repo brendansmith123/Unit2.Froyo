@@ -10,3 +10,14 @@ const flavors = {
 };
 
 console.table(flavors);
+
+const flavorsArr = {
+  flavors: [],
+};
+
+for (let i = 0; i < flavorsArr.length; i++) {
+  if (flavorsArr[i] % 2 === 1) {
+    flavors.odds.push(flavorsArr[i]);
+  }
+}
+console.log("flavors", flavors);
