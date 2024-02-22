@@ -3,11 +3,21 @@ const userInputString = prompt(
   "vanilla,vanilla,vanilla,strawberry,coffee,coffee"
 );
 
-const flavors = {
+const flavors = userInputString.split(",");
+
+const flavor = {
   vanilla: 3,
   coffee: 2,
   strawberry: 1,
 };
+
+function countFlavors(flavors) {
+  const flavorCount = {};
+  flavors.forEach(flavor => {
+    flavorCount[flavor] = (flavorCount[flavor] || 0) + 1;
+  });
+  return flavorCount;
+}
 
 console.table(flavors);
 
@@ -15,9 +25,4 @@ const flavorsArr = {
   flavors: [],
 };
 
-for (let i = 0; i < flavorsArr.length; i++) {
-  if (flavorsArr[i] % 2 === 1) {
-    flavors.odds.push(flavorsArr[i]);
-  }
-}
 console.log("flavors", flavors);
